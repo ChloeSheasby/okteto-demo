@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-1
+spec:
+  selector:
+    matchLabels:
+      app: hello-world-1
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hello-world-1
+    spec:
+      containers:
+        - name: hello-world-1
+          image: registry.cloud.okteto.net/chloesheasby/hello-world-1:latest
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-1-service
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8080
+  selector:
+    app: hello-world-1
