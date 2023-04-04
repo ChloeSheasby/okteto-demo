@@ -24,7 +24,7 @@ This repository is for an assignment over Docker, Kubernetes, and Okteto done in
 - This is what **Hello World 2** returns:
 
 > Hello World! This message is coming from hello-world-2-787d9d4f5c-mmzf 
-> 'You have reached hello-world-1! My host name is hello-world-1-699dbb5896-14kc
+> 'You have reached hello-world-1! My host name is hello-world-1-699dbb5896-14kc'
 
 ### Assignment Description
 
